@@ -1,0 +1,19 @@
+[
+    {
+        "family" : "MaterialIcons",
+        "fonts" : [
+            {
+                "assets" : "https://fonts.gstatic.com/s/materialicons/v42/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"
+             }
+        ]
+    },
+
+    {
+        "family" : "ERAS",
+        "fonts" : [
+            {
+            "assets" : "ERASDEMI.ttf"
+            }
+        ]
+    }
+]
