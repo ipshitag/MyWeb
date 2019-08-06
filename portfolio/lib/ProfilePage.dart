@@ -30,6 +30,24 @@ class ProfilePage  extends StatelessWidget
                child: AnimatedPadding(
                  duration: Duration(seconds: 1),
                  padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.1),
+                 child: ResponsiveWidget(
+                   largeScreen: Column(
+                   mainAxisAlignment: MainAxisAlignment.start,
+                   children: <Widget>[
+                   NavHeader(),
+                   SizedBox
+                   (
+                     height: MediaQuery.of(context).size.height * 0.1,
+                   ),
+                  ProfileInfo(),
+                  SizedBox
+                  (
+                    height: MediaQuery.of(context).size.height * 0.2,
+                  ),
+                  SocialInfo(),
+                   ],
+                   ),
+                 )
              ),
          ),
          
