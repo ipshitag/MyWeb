@@ -1,5 +1,7 @@
 import 'package:flutter_web/material.dart';
 
+import 'ProfilePage.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
