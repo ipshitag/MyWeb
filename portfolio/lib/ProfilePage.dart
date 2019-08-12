@@ -284,14 +284,10 @@ class SocialInfo extends StatelessWidget {
       NavButton(
         text: "Instagram",
         onPressed: () {
-          html.window.open("https://twitter.com/imthepk", "Twitter");
+          html.window.open("https://www.instagram.com/_ipshitaaaa__/", "Twitter");
         },
         color: Colors.blue,
       ),
-      NavButton(
-        text: "Facebook",
-        onPressed: () {
-          html.window.open("https://facebook.com/thepawankumaar", "Fb");
         },
         color: Colors.blue,
       ),
