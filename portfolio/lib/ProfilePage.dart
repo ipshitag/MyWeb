@@ -28,19 +28,19 @@ class ProfilePage  extends StatelessWidget
                    NavButton(
                     text: "about",
                      onPressed: () {
-                      html.window.open("https://www.linkedin.com/in/ipshitaghosh13/", "IG");
+                      html.window.open("https://www.linkedin.com/in/ipshitaghosh13/", "About");
                     },
                   ),
                   NavButton(
                     text: "work",
                       onPressed: () {
-                      html.window.open("https://github.com/ipshitag?tab=repositories", "IG");
+                      html.window.open("https://github.com/ipshitag?tab=repositories", "Work");
                           },
                         ),
                   NavButton(
                     text: "contact",
                     onPressed: () {
-                    html.window.open("mailto:iuippi3@gmail.com", "IG");
+                    html.window.open("https://www.linkedin.com/in/ipshitaghosh13/detail/contact-info/", "IG");
                     },
                     ),
                   ],
@@ -282,15 +282,29 @@ class SocialInfo extends StatelessWidget {
         color: Colors.blue,
       ),
       NavButton(
-        text: "Instagram",
+        text: "LinkedIn",
         onPressed: () {
-          html.window.open("https://www.instagram.com/_ipshitaaaa__/", "Twitter");
+          html.window.open("https://www.linkedin.com/in/ipshitaghosh13/", "LinkedIn");
         },
         color: Colors.blue,
       ),
+
+      NavButton(
+        text: "StackOverflow",
+        onPressed: () {
+          html.window.open("https://stackoverflow.com/users/story/7449819", "StackOverflow");
         },
         color: Colors.blue,
       ),
+
+      NavButton(
+        text: "Techgig",
+        onPressed: () {
+          html.window.open("https://www.techgig.com/ipshitag", "Techgig");
+        },
+        color: Colors.blue,
+      ),
+       
     ];
   }
 
