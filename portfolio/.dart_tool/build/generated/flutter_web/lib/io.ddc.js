@@ -8,6 +8,13 @@ define(['dart_sdk'], function(dart_sdk) {
   const dartx = dart_sdk.dartx;
   const io = Object.create(dart.library);
   let JSArrayOfString = () => (JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))();
+  const CT = Object.create(null);
+  dart.defineLazy(CT, {
+    get C0() {
+      return C0 = dart.constMap(core.String, core.String, ["FLUTTER_TEST", "true"]);
+    }
+  });
+  let C0;
   io.Platform = class Platform extends core.Object {
     static get operatingSystem() {
       return io.Platform._operatingSystem;
@@ -41,7 +48,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return io.Platform._operatingSystem === "fuchsia";
     },
     /*io.Platform.environment*/get environment() {
-      return dart.constMap(core.String, core.String, ["FLUTTER_TEST", "true"]);
+      return C0 || CT.C0;
     }
   });
   io._ProgramExitedError = class _ProgramExitedError extends core.Error {
@@ -327,13 +334,13 @@ define(['dart_sdk'], function(dart_sdk) {
   }).prototype = io.SecurityContext.prototype;
   dart.addTypeTests(io.SecurityContext);
   dart.setLibraryUri(io.SecurityContext, "package:flutter_web/io.dart");
-  io.exit = function(exitCode) {
+  io.exit = function exit(exitCode) {
     dart.throw(new io._ProgramExitedError.new());
   };
   dart.trackLibraries("packages/flutter_web/io", {
     "package:flutter_web/io.dart": io
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["org-dartlang-app:///packages/flutter_web/io.dart"],"names":[],"mappings":";;;;;;;;;;;;AAkBuC;IAAgB;;;;EA8CvD;;;;MAnDe,4BAAgB;YAAG;;MAed,mBAAO;YAAI,AAAiB,kCAAG;;MAM/B,mBAAO;YAAI,AAAiB,kCAAG;;MAM/B,qBAAS;YAAI,AAAiB,kCAAG;;MAMjC,qBAAS;YAAI,AAAiB,kCAAG;;MAMjC,iBAAK;YAAI,AAAiB,kCAAG;;MAM7B,qBAAS;YAAI,AAAiB,kCAAG;;MAElB,uBAAW;YAAmB,0CAE7D,gBAAgB;;;;;AAUG;IAAgB;;;;;EACvC;;;;;qBAK8C;AAC1C,YAAO;IACT;;;;EACF;;;;;;;;MALuB,uBAAM;;;;;;IAQtB;;;;;;IACI;;;;;;IACA;;;;;;IACL;;;;;;IACG;;;;;;mBAEC,KAAY,OAA6B;IAAc;wBAEpD,MAAU,MAAa,OAA6B;IAAc;qBAEb;IAAI;0BAG5D;IAAI;+BAEmD;IAAW;;UACzD,+CAAQ;IAAS;WACM,MAAU,MAAa;AAC7D,YAAO;IACT;cAEwC;AACtC,YAAO;IACT;kBAEuC;IAAI;QACN,MAAU,MAAa;AAC1D,YAAO;IACT;WAEqC;AACnC,YAAO;IACT;SAEsC,MAAU,MAAa;AAC3D,YAAO;IACT;YAEsC;AACpC,YAAO;IACT;SAGW,QAAe,MAAU,MAAa;AAC/C,YAAO;IACT;YAEyC,QAAY;AACnD,YAAO;IACT;UAEuC,MAAU,MAAa;AAC5D,YAAO;IACT;aAEuC;AACrC,YAAO;IACT;SAEsC,MAAU,MAAa;AAC3D,YAAO;IACT;YAEsC;AACpC,YAAO;IACT;QAEqC,MAAU,MAAa;AAC1D,YAAO;IACT;WAEqC;AACnC,YAAO;IACT;;;IAzEK;IACI;IACA;IACL;IACG;;EAsET;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAE6B;;;;IAGlB;;;;;;;;;;EAgBX;;;;;;;;;SAGkC;AAAS,YAAQ;IAAE;QACnC,MAAa;IAAQ;;IACvB;YAC+C;IAAI;cAC3C;IAAO;WACV,MAAa;IAAQ;cAClB;IAAO;QACb,MAAa;IAAQ;UACjB;AAAS;IAAI;;;;EACnC;;;;;;;;;;;;;;;;;;EAkBA;;;;;;EAE0B;;;;;;EAEZ;;;;;;EAEA;;;;;;EAES;;;;;;EAEH;;;;;;EAEG;;;;;;EAEA;;;qBA7JT;IACZ,WAAM;EACR","file":"io.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["io.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;AAkBuC;IAAgB;;;;EA8CvD;;;;MAnDe,4BAAgB;YAAG;;MAed,mBAAO;YAAI,AAAiB,kCAAG;;MAM/B,mBAAO;YAAI,AAAiB,kCAAG;;MAM/B,qBAAS;YAAI,AAAiB,kCAAG;;MAMjC,qBAAS;YAAI,AAAiB,kCAAG;;MAMjC,iBAAK;YAAI,AAAiB,kCAAG;;MAM7B,qBAAS;YAAI,AAAiB,kCAAG;;MAElB,uBAAW;;;;;;AAYvB;IAAgB;;;;;EACvC;;;;;qBAK8C;AAC1C,YAAO;IACT;;;;EACF;;;;;;;;MALuB,uBAAM;;;;;;IAQtB;;;;;;IACI;;;;;;IACA;;;;;;IACL;;;;;;IACG;;;;;;mBAEC,KAAY,OAA6B;IAAc;wBAEpD,MAAU,MAAa,OAA6B;IAAc;qBAEb;IAAI;0BAG5D;IAAI;+BAEmD;IAAW;;UACzD;IAAiB;WACM,MAAU,MAAa;AAC7D,YAAO;IACT;cAEwC;AACtC,YAAO;IACT;kBAEuC;IAAI;QACN,MAAU,MAAa;AAC1D,YAAO;IACT;WAEqC;AACnC,YAAO;IACT;SAEsC,MAAU,MAAa;AAC3D,YAAO;IACT;YAEsC;AACpC,YAAO;IACT;SAGW,QAAe,MAAU,MAAa;AAC/C,YAAO;IACT;YAEyC,QAAY;AACnD,YAAO;IACT;UAEuC,MAAU,MAAa;AAC5D,YAAO;IACT;aAEuC;AACrC,YAAO;IACT;SAEsC,MAAU,MAAa;AAC3D,YAAO;IACT;YAEsC;AACpC,YAAO;IACT;QAEqC,MAAU,MAAa;AAC1D,YAAO;IACT;WAEqC;AACnC,YAAO;IACT;;;IAzEK;IACI;IACA;IACL;IACG;;EAsET;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAE6B;;;;IAGlB;;;;;;;;;;EAgBX;;;;;;;;;SAGkC;AAAS,YAAQ;IAAE;QACnC,MAAa;IAAQ;;IACvB;YAC+C;IAAI;cAC3C;IAAO;WACV,MAAa;IAAQ;cAClB;IAAO;QACb,MAAa;IAAQ;UACjB;AAAS;IAAI;;;;EACnC;;;;;;;;;;;;;;;;;;EAkBA;;;;;;EAE0B;;;;;;EAEZ;;;;;;EAEA;;;;;;EAES;;;;;;EAEH;;;;;;EAEG;;;;;;EAEA;;;0BA7JT;IACZ,WAAM;EACR","file":"io.ddc.js"}');
   // Exports:
   return {
     io: io

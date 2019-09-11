@@ -4,6 +4,7 @@ define(['dart_sdk'], function(dart_sdk) {
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const cupertino = Object.create(dart.library);
+  const CT = Object.create(null);
   dart.trackLibraries("packages/flutter_web/cupertino", {
     "package:flutter_web/cupertino.dart": cupertino
   }, {

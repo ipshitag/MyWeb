@@ -1,19 +1,45 @@
-define(['dart_sdk', 'packages/flutter_web/animation'], function(dart_sdk, animation) {
+define(['dart_sdk', 'packages/flutter_web/animation'], function(dart_sdk, packages__flutter_web__animation) {
   'use strict';
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const src__widgets__media_query = animation.src__widgets__media_query;
-  const src__widgets__layout_builder = animation.src__widgets__layout_builder;
-  const src__widgets__framework = animation.src__widgets__framework;
-  const src__rendering__box = animation.src__rendering__box;
-  const src__widgets__widget_inspector = animation.src__widgets__widget_inspector;
+  const media_query = packages__flutter_web__animation.src__widgets__media_query;
+  const layout_builder = packages__flutter_web__animation.src__widgets__layout_builder;
+  const framework = packages__flutter_web__animation.src__widgets__framework;
+  const box = packages__flutter_web__animation.src__rendering__box;
+  const widget_inspector = packages__flutter_web__animation.src__widgets__widget_inspector;
   const responsive_widget = Object.create(dart.library);
-  let BuildContextAndBoxConstraintsToWidget = () => (BuildContextAndBoxConstraintsToWidget = dart.constFn(dart.fnType(src__widgets__framework.Widget, [src__widgets__framework.BuildContext, src__rendering__box.BoxConstraints])))();
-  let const$;
-  let const$0;
-  let const$1;
-  responsive_widget.ResponsiveWidget = class ResponsiveWidget extends src__widgets__framework.StatelessWidget {
+  let BuildContextAndBoxConstraintsToWidget = () => (BuildContextAndBoxConstraintsToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, box.BoxConstraints])))();
+  const CT = Object.create(null);
+  dart.defineLazy(CT, {
+    get C2() {
+      return C2 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        parameterLocations: null,
+        name: "builder",
+        column: 11,
+        line: 39,
+        file: null
+      });
+    },
+    get C1() {
+      return C1 = dart.constList([C2 || CT.C2], widget_inspector._Location);
+    },
+    get C0() {
+      return C0 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        parameterLocations: C1 || CT.C1,
+        name: null,
+        column: 17,
+        line: 37,
+        file: "org-dartlang-app:///packages/portfolio/responsive_widget.dart"
+      });
+    }
+  });
+  let C2;
+  let C1;
+  let C0;
+  responsive_widget.ResponsiveWidget = class ResponsiveWidget extends framework.StatelessWidget {
     get largeScreen() {
       return this[largeScreen$];
     }
@@ -33,16 +59,16 @@ define(['dart_sdk', 'packages/flutter_web/animation'], function(dart_sdk, animat
       super.smallScreen = value;
     }
     static isSmallScreen(context) {
-      return dart.notNull(src__widgets__media_query.MediaQuery.of(context).size.width) < 800;
+      return dart.notNull(media_query.MediaQuery.of(context).size.width) < 800;
     }
     static isLargeScreen(context) {
-      return dart.notNull(src__widgets__media_query.MediaQuery.of(context).size.width) > 800;
+      return dart.notNull(media_query.MediaQuery.of(context).size.width) > 800;
     }
     static isMediumScreen(context) {
-      return dart.notNull(src__widgets__media_query.MediaQuery.of(context).size.width) > 800 && dart.notNull(src__widgets__media_query.MediaQuery.of(context).size.width) < 1200;
+      return dart.notNull(media_query.MediaQuery.of(context).size.width) > 800 && dart.notNull(media_query.MediaQuery.of(context).size.width) < 1200;
     }
     build(context) {
-      return new src__widgets__layout_builder.LayoutBuilder.new({builder: dart.fn((context, constraints) => {
+      return new layout_builder.LayoutBuilder.new({builder: dart.fn((context, constraints) => {
           let t0, t0$;
           if (dart.notNull(constraints.maxWidth) > 800) {
             return this.largeScreen;
@@ -53,7 +79,7 @@ define(['dart_sdk', 'packages/flutter_web/animation'], function(dart_sdk, animat
             t0$ = this.smallScreen;
             return t0$ == null ? this.largeScreen : t0$;
           }
-        }, BuildContextAndBoxConstraintsToWidget()), $creationLocationd_0dea112b090073317d4: const$1 || (const$1 = dart.const(new src__widgets__widget_inspector._Location.new({line: 37, column: 17, file: "org-dartlang-app:///packages/portfolio/responsive_widget.dart", parameterLocations: const$0 || (const$0 = dart.constList([const$ || (const$ = dart.const(new src__widgets__widget_inspector._Location.new({line: 39, column: 11, name: "builder"})))], src__widgets__widget_inspector._Location))})))});
+        }, BuildContextAndBoxConstraintsToWidget()), $creationLocationd_0dea112b090073317d4: C0 || CT.C0});
     }
   };
   (responsive_widget.ResponsiveWidget.new = function(opts) {
@@ -74,19 +100,19 @@ define(['dart_sdk', 'packages/flutter_web/animation'], function(dart_sdk, animat
   const smallScreen$ = Symbol("ResponsiveWidget.smallScreen");
   dart.setMethodSignature(responsive_widget.ResponsiveWidget, () => ({
     __proto__: dart.getMethods(responsive_widget.ResponsiveWidget.__proto__),
-    build: dart.fnType(src__widgets__framework.Widget, [src__widgets__framework.BuildContext])
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(responsive_widget.ResponsiveWidget, "package:portfolio/responsive_widget.dart");
   dart.setFieldSignature(responsive_widget.ResponsiveWidget, () => ({
     __proto__: dart.getFields(responsive_widget.ResponsiveWidget.__proto__),
-    largeScreen: dart.finalFieldType(src__widgets__framework.Widget),
-    mediumScreen: dart.finalFieldType(src__widgets__framework.Widget),
-    smallScreen: dart.finalFieldType(src__widgets__framework.Widget)
+    largeScreen: dart.finalFieldType(framework.Widget),
+    mediumScreen: dart.finalFieldType(framework.Widget),
+    smallScreen: dart.finalFieldType(framework.Widget)
   }));
   dart.trackLibraries("packages/portfolio/responsive_widget", {
     "package:portfolio/responsive_widget.dart": responsive_widget
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["org-dartlang-app:///packages/portfolio/responsive_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;IAIe;;;;;;IACA;;;;;;IACA;;;;;;yBAW6B;AAEpC,YAAyC,cAAvB,AAAY,AAAK,wCAAd,OAAO,gBAAe;IAC7C;yBAEuC;AAErC,YAAyC,cAAvB,AAAY,AAAK,wCAAd,OAAO,gBAAe;IAC5C;0BAEuC;AAErC,YAAyC,AAAM,cAA7B,AAAY,AAAK,wCAAd,OAAO,gBAAe,OAA0C,aAAvB,AAAY,AAAK,wCAAd,OAAO,gBAAe;IACzF;UAI4B;AAE1B,YAAO,8DAEG,SAAC,SAAS;;AAEjB,cAAyB,aAArB,AAAY,WAAD,aAAY;AAEzB,kBAAO;gBAEJ,KAAyB,aAArB,AAAY,WAAD,aAAY,QAA6B,aAArB,AAAY,WAAD,aAAY;AAE7D,iBAAO;yBAAa,OAAG;;AAIpB,kBAAO;0BAAY,OAAG;;;IAOrC;;;QA9CQ;QACW;QACV;QACA;;IAFU;IACV;IACA;AACH,sEAAW,GAAG;;EAAC","file":"responsive_widget.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["responsive_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAIe;;;;;;IACA;;;;;;IACA;;;;;;yBAW6B;AAEpC,YAAyC,cAAvB,AAAY,AAAK,0BAAd,OAAO,gBAAe;IAC7C;yBAEuC;AAErC,YAAyC,cAAvB,AAAY,AAAK,0BAAd,OAAO,gBAAe;IAC5C;0BAEuC;AAErC,YAAyC,AAAM,cAA7B,AAAY,AAAK,0BAAd,OAAO,gBAAe,OAA0C,aAAvB,AAAY,AAAK,0BAAd,OAAO,gBAAe;IACzF;UAI4B;AAE1B,YAAO,gDAEG,SAAC,SAAS;;AAEjB,cAAyB,aAArB,AAAY,WAAD,aAAY;AAEzB,kBAAO;gBAEJ,KAAyB,aAArB,AAAY,WAAD,aAAY,QAA6B,aAArB,AAAY,WAAD,aAAY;AAE7D,iBAAO;yBAAa,OAAG;;AAIpB,kBAAO;0BAAY,OAAG;;;IAOrC;;;QA9CQ;QACW;QACV;QACA;;IAFU;IACV;IACA;AACH,sEAAW,GAAG;;EAAC","file":"responsive_widget.ddc.js"}');
   // Exports:
   return {
     responsive_widget: responsive_widget

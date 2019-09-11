@@ -1,4 +1,4 @@
-define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/collection/src/utils'], function(dart_sdk, canonicalized_map, utils) {
+define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/collection/src/utils'], function(dart_sdk, packages__collection__src__canonicalized_map, packages__collection__src__utils) {
   'use strict';
   const core = dart_sdk.core;
   const collection = dart_sdk.collection;
@@ -7,19 +7,19 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
   const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const src__unmodifiable_wrappers = canonicalized_map.src__unmodifiable_wrappers;
-  const src__wrappers = canonicalized_map.src__wrappers;
-  const src__utils = utils.src__utils;
-  const src__combined_wrappers__combined_iterable = Object.create(dart.library);
-  const src__queue_list = Object.create(dart.library);
-  const src__union_set = Object.create(dart.library);
-  const src__combined_wrappers__combined_list = Object.create(dart.library);
-  const src__combined_wrappers__combined_map = Object.create(dart.library);
+  const unmodifiable_wrappers = packages__collection__src__canonicalized_map.src__unmodifiable_wrappers;
+  const wrappers = packages__collection__src__canonicalized_map.src__wrappers;
+  const utils = packages__collection__src__utils.src__utils;
+  const combined_iterable = Object.create(dart.library);
+  const queue_list = Object.create(dart.library);
+  const union_set = Object.create(dart.library);
+  const combined_list = Object.create(dart.library);
+  const combined_map = Object.create(dart.library);
   const collection$ = Object.create(dart.library);
-  const src__union_set_controller = Object.create(dart.library);
-  const src__functions = Object.create(dart.library);
-  const src__equality_set = Object.create(dart.library);
-  const src__equality_map = Object.create(dart.library);
+  const union_set_controller = Object.create(dart.library);
+  const functions = Object.create(dart.library);
+  const equality_set = Object.create(dart.library);
+  const equality_map = Object.create(dart.library);
   const $iterator = dartx.iterator;
   const $map = dartx.map;
   const $contains = dartx.contains;
@@ -49,10 +49,16 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
   const $removeLast = dartx.removeLast;
   const $reversed = dartx.reversed;
   let VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
-  const _iterables$ = dart.privateName(src__combined_wrappers__combined_iterable, "_iterables");
+  const CT = Object.create(null);
+  dart.defineLazy(CT, {
+    get C0() {
+      return C0 = dart.const(new _js_helper.PrivateSymbol.new('_source', _source));
+    }
+  });
+  const _iterables$ = dart.privateName(combined_iterable, "_iterables");
   const _is_CombinedIterableView_default = Symbol('_is_CombinedIterableView_default');
-  src__combined_wrappers__combined_iterable.CombinedIterableView$ = dart.generic(T => {
-    let _CombinedIteratorOfT = () => (_CombinedIteratorOfT = dart.constFn(src__combined_wrappers__combined_iterable._CombinedIterator$(T)))();
+  combined_iterable.CombinedIterableView$ = dart.generic(T => {
+    let _CombinedIteratorOfT = () => (_CombinedIteratorOfT = dart.constFn(combined_iterable._CombinedIterator$(T)))();
     let IteratorOfT = () => (IteratorOfT = dart.constFn(core.Iterator$(T)))();
     let IterableOfT = () => (IterableOfT = dart.constFn(core.Iterable$(T)))();
     let IterableOfTToIteratorOfT = () => (IterableOfTToIteratorOfT = dart.constFn(dart.fnType(IteratorOfT(), [IterableOfT()])))();
@@ -93,11 +99,11 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.defineExtensionAccessors(CombinedIterableView, ['iterator', 'isEmpty', 'length']);
     return CombinedIterableView;
   });
-  src__combined_wrappers__combined_iterable.CombinedIterableView = src__combined_wrappers__combined_iterable.CombinedIterableView$();
-  dart.addTypeTests(src__combined_wrappers__combined_iterable.CombinedIterableView, _is_CombinedIterableView_default);
-  const _iterators$ = dart.privateName(src__combined_wrappers__combined_iterable, "_iterators");
+  combined_iterable.CombinedIterableView = combined_iterable.CombinedIterableView$();
+  dart.addTypeTests(combined_iterable.CombinedIterableView, _is_CombinedIterableView_default);
+  const _iterators$ = dart.privateName(combined_iterable, "_iterators");
   const _is__CombinedIterator_default = Symbol('_is__CombinedIterator_default');
-  src__combined_wrappers__combined_iterable._CombinedIterator$ = dart.generic(T => {
+  combined_iterable._CombinedIterator$ = dart.generic(T => {
     class _CombinedIterator extends core.Object {
       get current() {
         let t0;
@@ -134,17 +140,17 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }));
     return _CombinedIterator;
   });
-  src__combined_wrappers__combined_iterable._CombinedIterator = src__combined_wrappers__combined_iterable._CombinedIterator$();
-  dart.addTypeTests(src__combined_wrappers__combined_iterable._CombinedIterator, _is__CombinedIterator_default);
-  const _table = dart.privateName(src__queue_list, "_table");
-  const _head = dart.privateName(src__queue_list, "_head");
-  const _tail = dart.privateName(src__queue_list, "_tail");
-  const _add = dart.privateName(src__queue_list, "_add");
-  const _preGrow = dart.privateName(src__queue_list, "_preGrow");
-  const _grow = dart.privateName(src__queue_list, "_grow");
-  const _writeToList = dart.privateName(src__queue_list, "_writeToList");
+  combined_iterable._CombinedIterator = combined_iterable._CombinedIterator$();
+  dart.addTypeTests(combined_iterable._CombinedIterator, _is__CombinedIterator_default);
+  const _table = dart.privateName(queue_list, "_table");
+  const _head = dart.privateName(queue_list, "_head");
+  const _tail = dart.privateName(queue_list, "_tail");
+  const _add = dart.privateName(queue_list, "_add");
+  const _preGrow = dart.privateName(queue_list, "_preGrow");
+  const _grow = dart.privateName(queue_list, "_grow");
+  const _writeToList = dart.privateName(queue_list, "_writeToList");
   const _is_QueueList_default = Symbol('_is_QueueList_default');
-  src__queue_list.QueueList$ = dart.generic(E => {
+  queue_list.QueueList$ = dart.generic(E => {
     let ListOfE = () => (ListOfE = dart.constFn(core.List$(E)))();
     let IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
     const Object_ListMixin$ = class Object_ListMixin extends core.Object {};
@@ -165,20 +171,20 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
         this[_tail$] = value;
       }
       static _castFrom(S, T, source) {
-        return new (src__queue_list._CastQueueList$(S, T)).new(source);
+        return new (queue_list._CastQueueList$(S, T)).new(source);
       }
       static from(source) {
         let t0;
         if (core.List.is(source)) {
           let length = source[$length];
-          let queue = new (src__queue_list.QueueList$(E)).new(dart.notNull(length) + 1);
+          let queue = new (queue_list.QueueList$(E)).new(dart.notNull(length) + 1);
           if (!(dart.notNull(queue[_table][$length]) > dart.notNull(length))) dart.assertFailed(null, "org-dartlang-app:///packages/collection/src/queue_list.dart", 57, 14, "queue._table.length > length");
           let sourceList = source;
           queue[_table][$setRange](0, length, sourceList, 0);
           queue[_tail] = length;
           return queue;
         } else {
-          t0 = new (src__queue_list.QueueList$(E)).new();
+          t0 = new (queue_list.QueueList$(E)).new();
           t0.addAll(source);
           return t0;
         }
@@ -215,7 +221,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
         }
       }
       cast(T) {
-        return src__queue_list.QueueList._castFrom(E, T, this);
+        return queue_list.QueueList._castFrom(E, T, this);
       }
       retype(T) {
         return this.cast(T);
@@ -327,7 +333,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
       [_preGrow](newElementCount) {
         if (!(dart.notNull(newElementCount) >= dart.notNull(this.length))) dart.assertFailed(null, "org-dartlang-app:///packages/collection/src/queue_list.dart", 235, 12, "newElementCount >= length");
         newElementCount = dart.notNull(newElementCount) + newElementCount[$rightShift](1);
-        let newCapacity = src__queue_list.QueueList._nextPowerOf2(newElementCount);
+        let newCapacity = queue_list.QueueList._nextPowerOf2(newElementCount);
         let newTable = ListOfE().new(newCapacity);
         this[_tail] = this[_writeToList](newTable);
         this[_table] = newTable;
@@ -339,12 +345,12 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
       this[_table] = null;
       this[_head$] = 0;
       this[_tail$] = 0;
-      if (initialCapacity == null || dart.notNull(initialCapacity) < dart.notNull(src__queue_list.QueueList._INITIAL_CAPACITY)) {
-        initialCapacity = src__queue_list.QueueList._INITIAL_CAPACITY;
-      } else if (!dart.test(src__queue_list.QueueList._isPowerOf2(initialCapacity))) {
-        initialCapacity = src__queue_list.QueueList._nextPowerOf2(initialCapacity);
+      if (initialCapacity == null || dart.notNull(initialCapacity) < 8) {
+        initialCapacity = 8;
+      } else if (!dart.test(queue_list.QueueList._isPowerOf2(initialCapacity))) {
+        initialCapacity = queue_list.QueueList._nextPowerOf2(initialCapacity);
       }
-      if (!dart.test(src__queue_list.QueueList._isPowerOf2(initialCapacity))) dart.assertFailed(null, "org-dartlang-app:///packages/collection/src/queue_list.dart", 45, 12, "_isPowerOf2(initialCapacity)");
+      if (!dart.test(queue_list.QueueList._isPowerOf2(initialCapacity))) dart.assertFailed(null, "org-dartlang-app:///packages/collection/src/queue_list.dart", 45, 12, "_isPowerOf2(initialCapacity)");
       this[_table] = ListOfE().new(initialCapacity);
     }).prototype = QueueList.prototype;
     (QueueList.__ = function() {
@@ -360,9 +366,9 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     QueueList[dart.implements] = () => [collection.Queue$(E)];
     dart.setMethodSignature(QueueList, () => ({
       __proto__: dart.getMethods(QueueList.__proto__),
-      cast: dart.gFnType(T => [src__queue_list.QueueList$(T), []]),
-      [$cast]: dart.gFnType(T => [src__queue_list.QueueList$(T), []]),
-      retype: dart.gFnType(T => [src__queue_list.QueueList$(T), []]),
+      cast: dart.gFnType(T => [queue_list.QueueList$(T), []]),
+      [$cast]: dart.gFnType(T => [queue_list.QueueList$(T), []]),
+      retype: dart.gFnType(T => [queue_list.QueueList$(T), []]),
       addLast: dart.fnType(dart.void, [core.Object]),
       addFirst: dart.fnType(dart.void, [core.Object]),
       removeFirst: dart.fnType(E, []),
@@ -404,17 +410,17 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.defineExtensionAccessors(QueueList, ['length']);
     return QueueList;
   });
-  src__queue_list.QueueList = src__queue_list.QueueList$();
-  dart.defineLazy(src__queue_list.QueueList, {
-    /*src__queue_list.QueueList._INITIAL_CAPACITY*/get _INITIAL_CAPACITY() {
+  queue_list.QueueList = queue_list.QueueList$();
+  dart.defineLazy(queue_list.QueueList, {
+    /*queue_list.QueueList._INITIAL_CAPACITY*/get _INITIAL_CAPACITY() {
       return 8;
     }
   });
-  dart.addTypeTests(src__queue_list.QueueList, _is_QueueList_default);
-  const _delegate$ = dart.privateName(src__queue_list, "_delegate");
+  dart.addTypeTests(queue_list.QueueList, _is_QueueList_default);
+  const _delegate$ = dart.privateName(queue_list, "_delegate");
   const _is__CastQueueList_default = Symbol('_is__CastQueueList_default');
-  src__queue_list._CastQueueList$ = dart.generic((S, T) => {
-    class _CastQueueList extends src__queue_list.QueueList$(T) {
+  queue_list._CastQueueList$ = dart.generic((S, T) => {
+    class _CastQueueList extends queue_list.QueueList$(T) {
       get [_head]() {
         return this[_delegate$][_head];
       }
@@ -448,18 +454,18 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.setLibraryUri(_CastQueueList, "package:collection/src/queue_list.dart");
     dart.setFieldSignature(_CastQueueList, () => ({
       __proto__: dart.getFields(_CastQueueList.__proto__),
-      [_delegate$]: dart.finalFieldType(src__queue_list.QueueList$(S))
+      [_delegate$]: dart.finalFieldType(queue_list.QueueList$(S))
     }));
     return _CastQueueList;
   });
-  src__queue_list._CastQueueList = src__queue_list._CastQueueList$();
-  dart.addTypeTests(src__queue_list._CastQueueList, _is__CastQueueList_default);
-  const _sets$ = dart.privateName(src__union_set, "_sets");
-  const _disjoint = dart.privateName(src__union_set, "_disjoint");
-  const _iterable = dart.privateName(src__union_set, "_iterable");
-  const _dedupIterable = dart.privateName(src__union_set, "_dedupIterable");
+  queue_list._CastQueueList = queue_list._CastQueueList$();
+  dart.addTypeTests(queue_list._CastQueueList, _is__CastQueueList_default);
+  const _sets$ = dart.privateName(union_set, "_sets");
+  const _disjoint = dart.privateName(union_set, "_disjoint");
+  const _iterable = dart.privateName(union_set, "_iterable");
+  const _dedupIterable = dart.privateName(union_set, "_dedupIterable");
   const _is_UnionSet_default = Symbol('_is_UnionSet_default');
-  src__union_set.UnionSet$ = dart.generic(E => {
+  union_set.UnionSet$ = dart.generic(E => {
     let SetOfE = () => (SetOfE = dart.constFn(core.Set$(E)))();
     let intAndSetOfEToint = () => (intAndSetOfEToint = dart.constFn(dart.fnType(core.int, [core.int, SetOfE()])))();
     let SetOfEToSetOfE = () => (SetOfEToSetOfE = dart.constFn(dart.fnType(SetOfE(), [SetOfE()])))();
@@ -470,7 +476,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     const SetBase_UnmodifiableSetMixin$ = class SetBase_UnmodifiableSetMixin extends collection.SetBase$(E) {};
     (SetBase_UnmodifiableSetMixin$.new = function() {
     }).prototype = SetBase_UnmodifiableSetMixin$.prototype;
-    dart.applyMixin(SetBase_UnmodifiableSetMixin$, src__unmodifiable_wrappers.UnmodifiableSetMixin$(E));
+    dart.applyMixin(SetBase_UnmodifiableSetMixin$, unmodifiable_wrappers.UnmodifiableSetMixin$(E));
     class UnionSet extends SetBase_UnmodifiableSetMixin$ {
       get length() {
         return dart.test(this[_disjoint]) ? this[_sets$][$fold](core.int, 0, dart.fn((length, set) => dart.notNull(length) + dart.notNull(set[$length]), intAndSetOfEToint())) : this[_iterable][$length];
@@ -543,14 +549,14 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.defineExtensionAccessors(UnionSet, ['length', 'iterator']);
     return UnionSet;
   });
-  src__union_set.UnionSet = src__union_set.UnionSet$();
-  dart.addTypeTests(src__union_set.UnionSet, _is_UnionSet_default);
-  const _lists$ = dart.privateName(src__combined_wrappers__combined_list, "_lists");
-  const _source = dart.privateName(src__combined_wrappers__combined_list, "_source");
-  let const$;
+  union_set.UnionSet = union_set.UnionSet$();
+  dart.addTypeTests(union_set.UnionSet, _is_UnionSet_default);
+  const _lists$ = dart.privateName(combined_list, "_lists");
+  const _source = dart.privateName(combined_list, "_source");
+  let C0;
   const _source$ = dart.privateName(collection, "_source");
   const _is_CombinedListView_default = Symbol('_is_CombinedListView_default');
-  src__combined_wrappers__combined_list.CombinedListView$ = dart.generic(T => {
+  combined_list.CombinedListView$ = dart.generic(T => {
     let ListOfT = () => (ListOfT = dart.constFn(core.List$(T)))();
     let intAndListOfTToint = () => (intAndListOfTToint = dart.constFn(dart.fnType(core.int, [core.int, ListOfT()])))();
     let IterableOfT = () => (IterableOfT = dart.constFn(core.Iterable$(T)))();
@@ -559,7 +565,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
         dart.throw(new core.UnsupportedError.new("Cannot modify an unmodifiable List"));
       }
       set length(length) {
-        src__combined_wrappers__combined_list.CombinedListView._throw();
+        combined_list.CombinedListView._throw();
       }
       get length() {
         return this[_lists$][$fold](core.int, 0, dart.fn((length, list) => dart.notNull(length) + dart.notNull(list[$length]), intAndListOfTToint()));
@@ -578,24 +584,24 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
       _set(index, value$) {
         let value = value$;
         T._check(value);
-        src__combined_wrappers__combined_list.CombinedListView._throw();
+        combined_list.CombinedListView._throw();
         return value$;
       }
       clear() {
-        src__combined_wrappers__combined_list.CombinedListView._throw();
+        combined_list.CombinedListView._throw();
       }
       remove(element) {
-        src__combined_wrappers__combined_list.CombinedListView._throw();
+        combined_list.CombinedListView._throw();
         return null;
       }
       removeWhere(test) {
-        src__combined_wrappers__combined_list.CombinedListView._throw();
+        combined_list.CombinedListView._throw();
       }
       retainWhere(test) {
-        src__combined_wrappers__combined_list.CombinedListView._throw();
+        combined_list.CombinedListView._throw();
       }
       get [_source$]() {
-        return IterableOfT()._check(this[$noSuchMethod](new core._Invocation.getter(const$ || (const$ = dart.const(new _js_helper.PrivateSymbol.new('_source', _source))))));
+        return IterableOfT()._check(this[$noSuchMethod](new core._Invocation.getter(C0 || CT.C0)));
       }
     }
     (CombinedListView.new = function(_lists) {
@@ -639,12 +645,12 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.defineExtensionAccessors(CombinedListView, ['length']);
     return CombinedListView;
   });
-  src__combined_wrappers__combined_list.CombinedListView = src__combined_wrappers__combined_list.CombinedListView$();
-  dart.addTypeTests(src__combined_wrappers__combined_list.CombinedListView, _is_CombinedListView_default);
-  const _maps$ = dart.privateName(src__combined_wrappers__combined_map, "_maps");
+  combined_list.CombinedListView = combined_list.CombinedListView$();
+  dart.addTypeTests(combined_list.CombinedListView, _is_CombinedListView_default);
+  const _maps$ = dart.privateName(combined_map, "_maps");
   const _is_CombinedMapView_default = Symbol('_is_CombinedMapView_default');
-  src__combined_wrappers__combined_map.CombinedMapView$ = dart.generic((K, V) => {
-    let CombinedIterableViewOfK = () => (CombinedIterableViewOfK = dart.constFn(src__combined_wrappers__combined_iterable.CombinedIterableView$(K)))();
+  combined_map.CombinedMapView$ = dart.generic((K, V) => {
+    let CombinedIterableViewOfK = () => (CombinedIterableViewOfK = dart.constFn(combined_iterable.CombinedIterableView$(K)))();
     let IterableOfK = () => (IterableOfK = dart.constFn(core.Iterable$(K)))();
     let MapOfK$V = () => (MapOfK$V = dart.constFn(core.Map$(K, V)))();
     let MapOfK$VToIterableOfK = () => (MapOfK$VToIterableOfK = dart.constFn(dart.fnType(IterableOfK(), [MapOfK$V()])))();
@@ -687,15 +693,15 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.defineExtensionAccessors(CombinedMapView, ['keys']);
     return CombinedMapView;
   });
-  src__combined_wrappers__combined_map.CombinedMapView = src__combined_wrappers__combined_map.CombinedMapView$();
-  dart.addTypeTests(src__combined_wrappers__combined_map.CombinedMapView, _is_CombinedMapView_default);
-  const _set = dart.privateName(src__union_set_controller, "_set");
-  const _sets = dart.privateName(src__union_set_controller, "_sets");
+  combined_map.CombinedMapView = combined_map.CombinedMapView$();
+  dart.addTypeTests(combined_map.CombinedMapView, _is_CombinedMapView_default);
+  const _set = dart.privateName(union_set_controller, "_set");
+  const _sets = dart.privateName(union_set_controller, "_sets");
   const _is_UnionSetController_default = Symbol('_is_UnionSetController_default');
-  src__union_set_controller.UnionSetController$ = dart.generic(E => {
+  union_set_controller.UnionSetController$ = dart.generic(E => {
     let SetOfE = () => (SetOfE = dart.constFn(core.Set$(E)))();
     let _HashSetOfSetOfE = () => (_HashSetOfSetOfE = dart.constFn(collection._HashSet$(SetOfE())))();
-    let UnionSetOfE = () => (UnionSetOfE = dart.constFn(src__union_set.UnionSet$(E)))();
+    let UnionSetOfE = () => (UnionSetOfE = dart.constFn(union_set.UnionSet$(E)))();
     class UnionSetController extends core.Object {
       get set() {
         return this[_set];
@@ -724,19 +730,19 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }));
     dart.setGetterSignature(UnionSetController, () => ({
       __proto__: dart.getGetters(UnionSetController.__proto__),
-      set: src__union_set.UnionSet$(E)
+      set: union_set.UnionSet$(E)
     }));
     dart.setLibraryUri(UnionSetController, "package:collection/src/union_set_controller.dart");
     dart.setFieldSignature(UnionSetController, () => ({
       __proto__: dart.getFields(UnionSetController.__proto__),
-      [_set]: dart.fieldType(src__union_set.UnionSet$(E)),
+      [_set]: dart.fieldType(union_set.UnionSet$(E)),
       [_sets]: dart.finalFieldType(core.Set$(core.Set$(E)))
     }));
     return UnionSetController;
   });
-  src__union_set_controller.UnionSetController = src__union_set_controller.UnionSetController$();
-  dart.addTypeTests(src__union_set_controller.UnionSetController, _is_UnionSetController_default);
-  src__functions.mapMap = function(K1, V1, K2, V2, map, opts) {
+  union_set_controller.UnionSetController = union_set_controller.UnionSetController$();
+  dart.addTypeTests(union_set_controller.UnionSetController, _is_UnionSetController_default);
+  functions.mapMap = function mapMap(K1, V1, K2, V2, map, opts) {
     let key = opts && 'key' in opts ? opts.key : null;
     let value = opts && 'value' in opts ? opts.value : null;
     key == null ? key = dart.fn((mapKey, _) => K2.as(mapKey), dart.fnType(K2, [K1, V1])) : null;
@@ -747,7 +753,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }, dart.fnType(core.Null, [K1, V1])));
     return result;
   };
-  src__functions.mergeMaps = function(K, V, map1, map2, opts) {
+  functions.mergeMaps = function mergeMaps(K, V, map1, map2, opts) {
     let t0;
     let value = opts && 'value' in opts ? opts.value : null;
     let result = collection.LinkedHashMap$(K, V).from(map1);
@@ -761,7 +767,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }, dart.fnType(core.Null, [K, V])));
     return result;
   };
-  src__functions.groupBy = function(S, T, values, key) {
+  functions.groupBy = function groupBy(S, T, values, key) {
     let map = new (_js_helper.LinkedMap$(T, core.List$(S))).new();
     for (let element of values) {
       let list = map[$putIfAbsent](key(element), dart.fn(() => _interceptors.JSArray$(S).of([]), dart.fnType(core.List$(S), [])));
@@ -769,9 +775,9 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }
     return map;
   };
-  src__functions.minBy = function(S, T, values, orderBy, opts) {
+  functions.minBy = function minBy(S, T, values, orderBy, opts) {
     let compare = opts && 'compare' in opts ? opts.compare : null;
-    compare == null ? compare = src__utils.defaultCompare(T) : null;
+    compare == null ? compare = utils.defaultCompare(T) : null;
     let minValue = null;
     let minOrderBy = null;
     for (let element of values) {
@@ -783,9 +789,9 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }
     return minValue;
   };
-  src__functions.maxBy = function(S, T, values, orderBy, opts) {
+  functions.maxBy = function maxBy(S, T, values, orderBy, opts) {
     let compare = opts && 'compare' in opts ? opts.compare : null;
-    compare == null ? compare = src__utils.defaultCompare(T) : null;
+    compare == null ? compare = utils.defaultCompare(T) : null;
     let maxValue = null;
     let maxOrderBy = null;
     for (let element of values) {
@@ -797,7 +803,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }
     return maxValue;
   };
-  src__functions.transitiveClosure = function(T, graph) {
+  functions.transitiveClosure = function transitiveClosure(T, graph) {
     let result = new (_js_helper.LinkedMap$(T, core.Set$(T))).new();
     graph[$forEach](dart.fn((vertex, edges) => {
       result[$_set](vertex, collection.LinkedHashSet$(T).from(edges));
@@ -814,7 +820,7 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     }
     return result;
   };
-  src__functions.stronglyConnectedComponents = function(T, graph) {
+  functions.stronglyConnectedComponents = function stronglyConnectedComponents(T, graph) {
     let index = 0;
     let stack = _interceptors.JSArray$(T).of([]);
     let result = _interceptors.JSArray$(core.Set$(T)).of([]);
@@ -853,9 +859,9 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     return result[$reversed][$toList]();
   };
   const _is_EqualitySet_default = Symbol('_is_EqualitySet_default');
-  src__equality_set.EqualitySet$ = dart.generic(E => {
+  equality_set.EqualitySet$ = dart.generic(E => {
     let LinkedHashSetOfE = () => (LinkedHashSetOfE = dart.constFn(collection.LinkedHashSet$(E)))();
-    class EqualitySet extends src__wrappers.DelegatingSet$(E) {}
+    class EqualitySet extends wrappers.DelegatingSet$(E) {}
     (EqualitySet.new = function(equality) {
       EqualitySet.__proto__.new.call(this, LinkedHashSetOfE().new({equals: dart.bind(equality, 'equals'), hashCode: dart.bind(equality, 'hash'), isValidKey: dart.bind(equality, 'isValidKey')}));
       ;
@@ -869,12 +875,12 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.setLibraryUri(EqualitySet, "package:collection/src/equality_set.dart");
     return EqualitySet;
   });
-  src__equality_set.EqualitySet = src__equality_set.EqualitySet$();
-  dart.addTypeTests(src__equality_set.EqualitySet, _is_EqualitySet_default);
+  equality_set.EqualitySet = equality_set.EqualitySet$();
+  dart.addTypeTests(equality_set.EqualitySet, _is_EqualitySet_default);
   const _is_EqualityMap_default = Symbol('_is_EqualityMap_default');
-  src__equality_map.EqualityMap$ = dart.generic((K, V) => {
+  equality_map.EqualityMap$ = dart.generic((K, V) => {
     let LinkedHashMapOfK$V = () => (LinkedHashMapOfK$V = dart.constFn(collection.LinkedHashMap$(K, V)))();
-    class EqualityMap extends src__wrappers.DelegatingMap$(K, V) {}
+    class EqualityMap extends wrappers.DelegatingMap$(K, V) {}
     (EqualityMap.new = function(equality) {
       EqualityMap.__proto__.new.call(this, LinkedHashMapOfK$V().new({equals: dart.bind(equality, 'equals'), hashCode: dart.bind(equality, 'hash'), isValidKey: dart.bind(equality, 'isValidKey')}));
       ;
@@ -888,33 +894,33 @@ define(['dart_sdk', 'packages/collection/src/canonicalized_map', 'packages/colle
     dart.setLibraryUri(EqualityMap, "package:collection/src/equality_map.dart");
     return EqualityMap;
   });
-  src__equality_map.EqualityMap = src__equality_map.EqualityMap$();
-  dart.addTypeTests(src__equality_map.EqualityMap, _is_EqualityMap_default);
+  equality_map.EqualityMap = equality_map.EqualityMap$();
+  dart.addTypeTests(equality_map.EqualityMap, _is_EqualityMap_default);
   dart.trackLibraries("packages/collection/collection", {
-    "package:collection/src/combined_wrappers/combined_iterable.dart": src__combined_wrappers__combined_iterable,
-    "package:collection/src/queue_list.dart": src__queue_list,
-    "package:collection/src/union_set.dart": src__union_set,
-    "package:collection/src/combined_wrappers/combined_list.dart": src__combined_wrappers__combined_list,
-    "package:collection/src/combined_wrappers/combined_map.dart": src__combined_wrappers__combined_map,
+    "package:collection/src/combined_wrappers/combined_iterable.dart": combined_iterable,
+    "package:collection/src/queue_list.dart": queue_list,
+    "package:collection/src/union_set.dart": union_set,
+    "package:collection/src/combined_wrappers/combined_list.dart": combined_list,
+    "package:collection/src/combined_wrappers/combined_map.dart": combined_map,
     "package:collection/collection.dart": collection$,
-    "package:collection/src/union_set_controller.dart": src__union_set_controller,
-    "package:collection/src/functions.dart": src__functions,
-    "package:collection/src/equality_set.dart": src__equality_set,
-    "package:collection/src/equality_map.dart": src__equality_map
+    "package:collection/src/union_set_controller.dart": union_set_controller,
+    "package:collection/src/functions.dart": functions,
+    "package:collection/src/equality_set.dart": equality_set,
+    "package:collection/src/equality_map.dart": equality_map
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["org-dartlang-app:///packages/collection/src/combined_wrappers/combined_iterable.dart","org-dartlang-app:///packages/collection/src/queue_list.dart","org-dartlang-app:///packages/collection/src/union_set.dart","org-dartlang-app:///packages/collection/src/combined_wrappers/combined_list.dart","org-dartlang-app:///packages/collection/src/combined_wrappers/combined_map.dart","org-dartlang-app:///packages/collection/src/union_set_controller.dart","org-dartlang-app:///packages/collection/src/functions.dart","org-dartlang-app:///packages/collection/src/equality_set.dart","org-dartlang-app:///packages/collection/src/equality_map.dart"],"names":[],"mappings":"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","file":"collection.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["src\\\\combined_wrappers\\\\combined_iterable.dart","src\\\\queue_list.dart","src\\\\union_set.dart","src\\\\combined_wrappers\\\\combined_list.dart","src\\\\combined_wrappers\\\\combined_map.dart","src\\\\union_set_controller.dart","src\\\\functions.dart","src\\\\equality_set.dart","src\\\\equality_map.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAqBM,cAAI,kCAAqB,AAAW,AAAuB,uCAAnB,QAAC,KAAM,AAAE,CAAD;MAAoB;eAKnD;AAAY,cAAA,AAAW,yBAAI,QAAC,KAAM,AAAE,CAAD,YAAU,OAAO;MAAE;;AAEvD,cAAA,AAAW,2BAAM,QAAC,KAAM,AAAE,CAAD;MAAS;;AAEpC,cAAA,AAAW,oCAAK,GAAG,SAAC,QAAQ,MAAa,aAAP,MAAM,iBAAG,AAAE,CAAD;MAAQ;;;MAZtC;AAA1B;;IAAqC;;;;;;;;;;;;;;;;;;;;;;;;;AA2B1B,aAAA,AAAW;mCAAS;MAAO;;AAGtC,sBAAU,AAAW;AACzB,YAAI,OAAO,IAAI,kBAAQ,AAAQ,OAAD;AAC5B,gBAAO;;AAET,cAA6B,WAAtB,AAAW,2CAAc;MAClC;;;MAVuB;;IAAW;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MCd9B;;;;;;MACA;;;;;;6BAP6C;AAC/C,cAAW,4CAAqB,MAAM;MACxC;kBA2BmC;;AACjC,YAAW,aAAP,MAAM;AACJ,uBAAS,AAAO,MAAD;AACN,sBAAY,mCAAiB,aAAP,MAAM,IAAG;gBACjB,aAApB,AAAM,AAAO,KAAR,kCAAiB,MAAM;AAC/B,2BAAa,MAAM;UACvB,AAAM,AAAO,KAAR,oBAAiB,GAAG,MAAM,EAAE,UAAU,EAAE;UAC7C,AAAM,KAAD,UAAS,MAAM;AACpB,gBAAO,MAAK;;AAEZ,eAAW;UAAgB,UAAO,MAAM;;;MAE5C;UAIW;;QACT,WAAK,OAAO;MACd;aAEwB;;AACtB,YAAa,aAAT,QAAQ;AACN,qBAAO,QAAQ;AACf,yBAAW,AAAK,IAAD;AACf,uBAAc;AAClB,cAAW,AAAW,aAAlB,MAAM,iBAAG,QAAQ,kBAAI,AAAO;YAC9B,eAAgB,aAAP,MAAM,iBAAG,QAAQ;YAE1B,AAAO,wBAAS,MAAM,EAAS,aAAP,MAAM,iBAAG,QAAQ,GAAE,IAAI,EAAE;YACjD,cAAM,aAAN,4BAAS,QAAQ;;AAGb,2BAAyB,aAAd,AAAO,sCAAS;AAC/B,gBAAa,aAAT,QAAQ,IAAG,QAAQ;cACrB,AAAO,wBAAS,aAAa,aAAN,4BAAQ,QAAQ,GAAE,IAAI,EAAE;cAC/C,cAAM,aAAN,4BAAS,QAAQ;;AAEb,6BAAoB,aAAT,QAAQ,IAAG,QAAQ;cAClC,AAAO,wBAAS,aAAa,aAAN,eAAQ,QAAQ,EAAE,IAAI,EAAE;cAC/C,AAAO,wBAAS,GAAG,QAAQ,EAAE,IAAI,EAAE,QAAQ;cAC3C,cAAQ,QAAQ;;;;AAIpB,mBAAO,UAAW,SAAQ;YAAE,WAAK,OAAO;;MAE5C;;AAE0B,cAAU,sCAAgB;MAAK;;AAG7B;MAAS;;AAEhB,cAAa,8CAAqB,MAAM,KAAK;MAAI;cAIvD;;QACb,WAAK,OAAO;MACd;eAEgB;;QACd,cAAoB,CAAL,aAAN,eAAQ,IAAoB,aAAd,AAAO,yBAAS;QACvC,AAAM,oBAAC,aAAS,OAAO;AACvB,YAAI,AAAM,eAAG,aAAO;MACtB;;AAGE,YAAI,AAAM,eAAG,aAAO,WAAU,wBAAW;AACvC,qBAAS,AAAM,oBAAC;QAClB,AAAM,oBAAC,aAAS;QAChB,cAAoB,CAAL,aAAN,eAAQ,IAAoB,aAAd,AAAO,yBAAS;AACvC,cAAO,OAAM;MACf;;AAGE,YAAI,AAAM,eAAG,aAAO,WAAU,wBAAW;QACzC,cAAoB,CAAL,aAAN,eAAQ,IAAoB,aAAd,AAAO,yBAAS;AACrC,qBAAS,AAAM,oBAAC;QAClB,AAAM,oBAAC,aAAS;AAChB,cAAO,OAAM;MACf;;AAIkB,cAAgB,EAAT,aAAN,4BAAQ,eAAwB,aAAd,AAAO,yBAAS;MAAE;iBAExC;AACb,YAAU,aAAN,KAAK,IAAG,GAAG,WAAU,wBAAW,AAAoC,qBAA3B,KAAK;AAE9C,oBAAc,aAAN,KAAK,iBAAG;AACpB,YAAI,AAAM,KAAD,IAAI;AACX,cAAkB,aAAd,AAAO,uCAAU,KAAK;YACxB,eAAS,KAAK;;UAEhB,cAAwB,CAAT,aAAN,eAAQ,KAAK,GAAmB,aAAd,AAAO,yBAAS;AAC3C;;AAGE,sBAAgB,aAAN,eAAQ,KAAK;AAC3B,YAAI,AAAQ,OAAD,IAAI;UACb,AAAO,yBAAU,OAAO,EAAE,aAAO;;UAEjC,UAAA,AAAQ,OAAD,gBAAI,AAAO;UAClB,AAAO,yBAAU,GAAG,aAAO;UAC3B,AAAO,yBAAU,OAAO,EAAE,AAAO,uBAAQ;;QAE3C,cAAQ,OAAO;MACjB;WAEkB;AAChB,YAAU,aAAN,KAAK,IAAG,KAAW,aAAN,KAAK,kBAAI;UACxB,WAAU,wBAAW,AAAiD,oBAAzC,KAAK,4CAA2B,eAAM;;AAGrE,cAAO,AAAM,qBAAiB,CAAT,aAAN,4BAAQ,KAAK,IAAmB,aAAd,AAAO,yBAAS;MACnD;WAEsB;YAAS;;AAC7B,YAAU,aAAN,KAAK,IAAG,KAAW,aAAN,KAAK,kBAAI;UACxB,WAAU,wBAAW,AAAiD,oBAAzC,KAAK,4CAA2B,eAAM;;QAGrE,AAAM,oBAAiB,CAAT,aAAN,4BAAQ,KAAK,IAAmB,aAAd,AAAO,yBAAS,UAAM,KAAK;;MACvD;yBAO4B;AAAW,cAAwB,EAAhB,aAAP,MAAM,IAAW,aAAP,MAAM,IAAG,OAAO;MAAC;2BAOtC;cACb,aAAP,MAAM,IAAG;QAChB,SAAuB,CAAN,aAAP,MAAM,KAAI,WAAK;AACzB;AACM,2BAAoB,cAAP,MAAM,IAAW,aAAP,MAAM,IAAG;AACpC,cAAI,AAAW,UAAD,KAAI,GAAG,MAAO,OAAM;UAClC,SAAS,UAAU;;MAEvB;aAGY;QACV,AAAM,oBAAC,aAAS,OAAO;QACvB,cAAoB,CAAL,aAAN,eAAQ,IAAoB,aAAd,AAAO,yBAAS;AACvC,YAAI,AAAM,eAAG,aAAO;MACtB;;AAIU,uBAAe,cAAsB,aAAd,AAAO,yBAAS;AAC3C,oBAAsB,aAAd,AAAO,sCAAS;QAC5B,AAAS,QAAD,YAAU,GAAG,KAAK,EAAE,cAAQ;QACpC,AAAS,QAAD,YAAU,KAAK,EAAE,AAAM,KAAD,gBAAG,cAAO,cAAQ;QAChD,cAAQ;QACR,cAAQ,AAAO;QACf,eAAS,QAAQ;MACnB;qBAEyB;cACF,aAAd,AAAO,MAAD,2BAAW;AACxB,YAAU,aAAN,6BAAS;AACP,uBAAe,aAAN,4BAAQ;UACrB,AAAO,MAAD,YAAU,GAAG,MAAM,EAAE,cAAQ;AACnC,gBAAO,OAAM;;AAET,8BAA8B,aAAd,AAAO,sCAAS;UACpC,AAAO,MAAD,YAAU,GAAG,aAAa,EAAE,cAAQ;UAC1C,AAAO,MAAD,YAAU,aAAa,EAAE,AAAc,aAAD,gBAAG,cAAO,cAAQ;AAC9D,gBAAa,cAAN,eAAQ,aAAa;;MAEhC;iBAGkB;cACO,aAAhB,eAAe,kBAAI;QAI1B,kBAAgB,aAAhB,eAAe,IAAI,AAAgB,eAAD,cAAI;AAClC,0BAAc,mCAAc,eAAe;AACvC,uBAAe,cAAQ,WAAW;QAC1C,cAAQ,mBAAa,QAAQ;QAC7B,eAAS,QAAQ;QACjB,cAAQ;MACV;;8BAhNe;;MARP;MASI,eAAE;MACF,eAAE;AACZ,UAAI,AAAgB,eAAD,IAAI,QAAwB,aAAhB,eAAe;QAC5C;YACK,gBAAK,iCAAY,eAAe;QACrC,kBAAkB,mCAAc,eAAe;;qBAE1C,iCAAY,eAAe;MAClC,eAAa,cAAQ,eAAe;IACtC;;MAlBQ;;;;IAqBK;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAtBI,sCAAiB;;;;;;;;;;AAmOjB,cAAA,AAAU;MAAK;kBAClB;AAAU,cAAA,AAAU,2BAAQ,KAAK;;;AAE9B,cAAA,AAAU;MAAK;kBAClB;AAAU,cAAA,AAAU,2BAAQ,KAAK;;;;MAR3B;AAAmB;MACrC,eAAS,AAAU,AAAO;IAC5B;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AC9MkB,4CACZ,AAAM,8BAAK,GAAG,SAAC,QAAQ,QAAe,aAAP,MAAM,iBAAG,AAAI,GAAD,oCAC3C,AAAU;MAAM;;AAEM,cAAA,AAAU;MAAQ;;AAI1C,4CAAY,AAAM,yBAAO,QAAC,OAAQ,GAAG,uBAAI;MAAc;;AAQrD,mBAAW;AACf,cAAO,AAAM,AAAqB,0BAAd,QAAC,OAAQ,GAAG,6BAAQ,QAAC;AACvC,wBAAI,AAAK,IAAD,UAAU,OAAO,IAAG,MAAO;UACnC,AAAK,IAAD,KAAK,OAAO;AAChB,gBAAO;;MAEX;eAEqB;AAAY,cAAA,AAAM,oBAAI,QAAC,OAAQ,AAAI,GAAD,UAAU,OAAO;MAAE;aAE1D;AACd,YAAI,AAAQ,OAAD,IAAI,MAAM,MAAO;AAE5B,cAAO,AACF,AACA,uBADI,QAAC,OAAQ,AAAI,GAAD,QAAQ,OAAO,8BACpB,QAAC,UAAW,MAAM,IAAI,2BAAc,cAAM;MAC5D;;AAGM,qBAAa;AACjB,iBAAS,MAAO;UACd,AAAO,MAAD,QAAQ,GAAG;;AAEnB,cAAO,OAAM;MACf;;6BAvDc;UAAa;MAAb;MAA2C,kBAAE,QAAQ;;;8BAYpC;UAAY;8BAChC,AAAK,IAAD,uBAAoB,QAAQ;IAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;QC1B1C,WAAU,8BAAiB;MAC7B;iBAQe;QACb;MACF;;AAEkB,cAAA,AAAO,gCAAK,GAAG,SAAC,QAAQ,SAAgB,aAAP,MAAM,iBAAG,AAAK,IAAD;MAAQ;WAEtD;AACZ,2BAAe,KAAK;AACxB,iBAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAO,yBAAQ,IAAA,AAAC,CAAA;AAC9B,qBAAO,AAAM,qBAAC,CAAC;AACnB,cAAU,aAAN,KAAK,iBAAG,AAAK,IAAD;AACd,kBAAO,AAAI,KAAA,QAAC,KAAK;;UAEnB,QAAM,aAAN,KAAK,iBAAI,AAAK,IAAD;;QAEf,WAAU,wBAAiB,YAAY,EAAE,MAAM,SAAS,MAAM;MAChE;WAEsB;YAAS;;QAC7B;;MACF;;QAGE;MACF;aAEmB;QACjB;AACA,cAAO;MACT;kBAEsB;QACpB;MACF;kBAEsB;QACpB;MACF;;;;;;MAvCsB;;IAAO;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;WCGR;AACnB,iBAAS,MAAO;AAEV,sBAAQ,AAAG,GAAA,QAAC,GAAG;AACnB,cAAI,KAAK,IAAI,kBAAQ,AAAI,GAAD,eAAa,KAAK;AACxC,kBAAO,MAAK;;;AAGhB,cAAO;MACT;;AAawB,cAAI,qCAAwB,AAAM,kCAAI,QAAC,KAAM,AAAE,CAAD;MAAO;;;MAxBxD;;IAAM;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;ACDJ;MAAI;UAmBX;;QACd,AAAM,gBAAI,SAAS;MACrB;aAMmB;;AAAc,cAAA,AAAM,oBAAO,SAAS;MAAC;;;UAhB/B;MAVb;MAGN,cAAY;MAQhB,aAAW,wBAAY,wBAAiB,QAAQ;IAClD;;;;;;;;;;;;;;;;;;;;;;qDCvB6C;QACvC;QAA0B;IAChC,AAAI,GAAD,IAAC,OAAJ,MAAQ,SAAC,QAAQ,MAAa,MAAP,MAAM,gCAAzB;IACJ,AAAM,KAAD,IAAC,OAAN,QAAU,SAAC,GAAG,aAAsB,MAAT,QAAQ,gCAA7B;AAEF,iBAAiB;IACrB,AAAI,GAAD,WAAS,SAAC,QAAQ;MACnB,AAAM,MAAA,QAAC,AAAG,GAAA,CAAC,MAAM,EAAE,QAAQ,GAAK,AAAK,KAAA,CAAC,MAAM,EAAE,QAAQ;;AAExD,UAAO,OAAM;EACf;iDAOoC,MAAgB;;QAC7C;AACD,iBAAa,qCAAe,IAAI;AACpC,QAAI,AAAM,KAAD,IAAI,MAAM;WAAO,MAAM;MAAE,YAAO,IAAI;;;IAE7C,AAAK,IAAD,WAAS,SAAC,KAAK;MACjB,AAAM,MAAA,QAAC,GAAG,YACN,AAAO,MAAD,eAAa,GAAG,KAAI,AAAK,KAAA,CAAC,AAAM,MAAA,QAAC,GAAG,GAAG,QAAQ,IAAI,QAAQ;;AAEvE,UAAO,OAAM;EACf;6CAO0C,QAAU;AAC9C,cAAkB;AACtB,aAAS,UAAW,OAAM;AACpB,iBAAO,AAAI,GAAD,eAAa,AAAG,GAAA,CAAC,OAAO,GAAG,cAAM;MAC/C,AAAK,IAAD,OAAK,OAAO;;AAElB,UAAO,IAAG;EACZ;yCAQ0B,QAAU;QAC3B;IACP,AAAQ,OAAD,IAAC,OAAR,UAAY,0BAAJ;AAEN;AACA;AACF,aAAS,UAAW,OAAM;AACpB,2BAAiB,AAAO,OAAA,CAAC,OAAO;AACpC,UAAI,AAAW,UAAD,IAAI,QAA4C,aAApC,AAAO,OAAA,CAAC,cAAc,EAAE,UAAU,KAAI;QAC9D,WAAW,OAAO;QAClB,aAAa,cAAc;;;AAG/B,UAAO,SAAQ;EACjB;yCAQ0B,QAAU;QAC3B;IACP,AAAQ,OAAD,IAAC,OAAR,UAAY,0BAAJ;AAEN;AACA;AACF,aAAS,UAAW,OAAM;AACpB,2BAAiB,AAAO,OAAA,CAAC,OAAO;AACpC,UAAI,AAAW,UAAD,IAAI,QAA4C,aAApC,AAAO,OAAA,CAAC,cAAc,EAAE,UAAU,KAAI;QAC9D,WAAW,OAAO;QAClB,aAAa,cAAc;;;AAG/B,UAAO,SAAQ;EACjB;8DAawD;AAKlD,iBAAoB;IACxB,AAAM,KAAD,WAAS,SAAC,QAAQ;MACrB,AAAM,MAAA,QAAC,MAAM,EAAQ,kCAAY,KAAK;;AAKpC,eAAO,AAAM,AAAK,KAAN;AAChB,aAAS,UAAW,KAAI;AACtB,eAAS,UAAW,KAAI;AACtB,iBAAS,UAAW,KAAI;AACtB,wBAAI,AAAM,AAAU,MAAV,QAAC,OAAO,WAAW,OAAO,gBAChC,AAAM,AAAU,MAAV,QAAC,OAAO,WAAW,OAAO;YAClC,AAAM,AAAU,MAAV,QAAC,OAAO,MAAM,OAAO;;;;;AAMnC,UAAO,OAAM;EACf;kFAcgE;AAI1D,gBAAQ;AACR,gBAAW;AACX,iBAAiB;AAIjB,kBAAc;AACd,mBAAe;AACf,kBAAc;AAElB,2BAAgB;MACd,AAAO,OAAA,QAAC,MAAM,EAAI,KAAK;MACvB,AAAQ,QAAA,QAAC,MAAM,EAAI,KAAK;MACxB,QAAA,AAAK,KAAA;MAEL,AAAM,KAAD,OAAK,MAAM;MAChB,AAAQ,OAAD,KAAK,MAAM;AAElB,eAAS,YAAa,AAAK,MAAA,QAAC,MAAM;AAChC,uBAAK,AAAQ,OAAD,eAAa,SAAS;UAChC,AAAa,aAAA,CAAC,SAAS;UACvB,AAAQ,QAAA,QAAC,MAAM,EAAI,mBAAS,AAAQ,QAAA,QAAC,MAAM,GAAG,AAAQ,QAAA,QAAC,SAAS;cAC3D,eAAI,AAAQ,OAAD,UAAU,SAAS;UACnC,AAAQ,QAAA,QAAC,MAAM,EAAI,mBAAS,AAAQ,QAAA,QAAC,MAAM,GAAG,AAAQ,QAAA,QAAC,SAAS;;;AAIpE,UAAI,AAAQ,AAAS,QAAT,QAAC,MAAM,KAAK,AAAO,OAAA,QAAC,MAAM;AAChC,wBAAgB;AAClB;AACF;UACE,WAAW,AAAM,KAAD;UAChB,AAAQ,OAAD,QAAQ,QAAQ;UACvB,AAAU,SAAD,KAAK,QAAQ;8BACf,QAAQ,EAAI,MAAM;QAC3B,AAAO,MAAD,OAAK,SAAS;;;;AAIxB,aAAS,SAAU,AAAM,MAAD;AACtB,qBAAK,AAAQ,OAAD,eAAa,MAAM,IAAG,AAAa,aAAA,CAAC,MAAM;;AAKxD,UAAO,AAAO,AAAS,OAAV;EACf;;;;;gCC9L0B;AAClB,2CAAU,gCACW,UAAT,QAAQ,uBACG,UAAT,QAAQ,uBACG,UAAT,QAAQ;;IAAa;iCAOd,UAAsB;AAC7C,2CAAU,gCACW,UAAT,QAAQ,uBACG,UAAT,QAAQ,uBACG,UAAT,QAAQ;MAC5B,YAAO,KAAK;IACd;;;;;;;;;;;;gCCjBwB;AAClB,2CAAU,kCACW,UAAT,QAAQ,uBACG,UAAT,QAAQ,uBACG,UAAT,QAAQ;;IAAa;iCAOd,UAAoB;AAC3C,2CAAU,kCACW,UAAT,QAAQ,uBACG,UAAT,QAAQ,uBACG,UAAT,QAAQ;MAC5B,YAAO,KAAK;IACd","file":"collection.ddc.js"}');
   // Exports:
   return {
-    src__combined_wrappers__combined_iterable: src__combined_wrappers__combined_iterable,
-    src__queue_list: src__queue_list,
-    src__union_set: src__union_set,
-    src__combined_wrappers__combined_list: src__combined_wrappers__combined_list,
-    src__combined_wrappers__combined_map: src__combined_wrappers__combined_map,
+    src__combined_wrappers__combined_iterable: combined_iterable,
+    src__queue_list: queue_list,
+    src__union_set: union_set,
+    src__combined_wrappers__combined_list: combined_list,
+    src__combined_wrappers__combined_map: combined_map,
     collection: collection$,
-    src__union_set_controller: src__union_set_controller,
-    src__functions: src__functions,
-    src__equality_set: src__equality_set,
-    src__equality_map: src__equality_map
+    src__union_set_controller: union_set_controller,
+    src__functions: functions,
+    src__equality_set: equality_set,
+    src__equality_map: equality_map
   };
 });
 

@@ -3,10 +3,11 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const src__utils = Object.create(dart.library);
+  const utils = Object.create(dart.library);
   const $compareTo = dartx.compareTo;
+  const CT = Object.create(null);
   const _is_Pair_default = Symbol('_is_Pair_default');
-  src__utils.Pair$ = dart.generic((E, F) => {
+  utils.Pair$ = dart.generic((E, F) => {
     class Pair extends core.Object {
       get first() {
         return this[first$];
@@ -38,18 +39,18 @@ define(['dart_sdk'], function(dart_sdk) {
     }));
     return Pair;
   });
-  src__utils.Pair = src__utils.Pair$();
-  dart.addTypeTests(src__utils.Pair, _is_Pair_default);
-  src__utils.defaultCompare = function(T) {
+  utils.Pair = utils.Pair$();
+  dart.addTypeTests(utils.Pair, _is_Pair_default);
+  utils.defaultCompare = function defaultCompare(T) {
     return dart.fn((value1, value2) => core.Comparable.as(value1)[$compareTo](value2), dart.fnType(core.int, [T, T]));
   };
   dart.trackLibraries("packages/collection/src/utils", {
-    "package:collection/src/utils.dart": src__utils
+    "package:collection/src/utils.dart": utils
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["org-dartlang-app:///packages/collection/src/utils.dart"],"names":[],"mappings":";;;;;;;;;;MAMI;;;;;;MACA;;;;;;;yBAEQ,OAAY;MAAZ;MAAY;;IAAK;;;;;;;;;;;;;;;;AAKzB,oBAAC,QAAQ,WAAmB,AAAe,mBAAtB,MAAM,cAA0B,MAAM;EAAC","file":"utils.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["utils.dart"],"names":[],"mappings":";;;;;;;;;;;MAMI;;;;;;MACA;;;;;;;yBAEQ,OAAY;MAAZ;MAAY;;IAAK;;;;;;;;;;;;;;;;AAKzB,oBAAC,QAAQ,WAAmB,AAAe,mBAAtB,MAAM,cAA0B,MAAM;EAAC","file":"utils.ddc.js"}');
   // Exports:
   return {
-    src__utils: src__utils
+    src__utils: utils
   };
 });
 
